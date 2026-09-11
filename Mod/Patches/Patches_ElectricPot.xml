@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  VCE_ElectricPot, in VCE 1.6/Defs/ThingDefs_Buildings/Buildings.xml.
+
+  Same conversion as the cheese press: the PipeSystem comp out, the framework's comp in, and the
+  PipeSystem inspector tab removed. The pot keeps its power and flickable comps - the replacement
+  targets one <li> inside <comps>, not the whole node.
+
+  One thing is lost with the comp and cannot be carried over: PipeSystem's
+  noPowerDestroysProgress, which is what made soup spoil "extremely rapidly" on an unpowered pot,
+  as the building's own description still warns. The framework's equivalent is unpoweredFactor,
+  which slows a process down rather than ruining it, and Daemon976's soup processes leave it at
+  its default. Solar flares are survivable now. Left as the original had it rather than rebalanced
+  here.
+
+  The stew and bean-stew processes are listed with MayRequire rather than added from
+  Mods/Stews and Mods/BrazilianCrops, so that this list does not depend on the order two files of
+  the same mod are patched in. MayRequire with several packageIds requires all of them.
+-->
+<Patch>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="VCE_ElectricPot"]/inspectorTabs</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VCE_ElectricPot"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]</xpath>
+    <value>
+      <li Class="ProcessorFramework.CompProperties_Processor">
+        <capacity>2</capacity>
+        <independentProcesses>true</independentProcesses>
+        <processes>
+          <li>VCE_CookedSoupSimple</li>
+          <li>VCE_CookedSoupFine</li>
+          <li>VCE_CookedSoupLavish</li>
+          <li>VCE_CookedSoupGourmet</li>
+          <li MayRequire="VanillaExpanded.VCookEStews">VCE_CookedStewSimple</li>
+          <li MayRequire="VanillaExpanded.VCookEStews">VCE_CookedStewFine</li>
+          <li MayRequire="VanillaExpanded.VCookEStews">VCE_CookedStewLavish</li>
+          <li MayRequire="zal.braziliancrops,VanillaExpanded.VCookEStews">KIT_BeanStewFine</li>
+          <li MayRequire="zal.braziliancrops,VanillaExpanded.VCookEStews">KIT_BeanStewLavish</li>
+          <li MayRequire="zal.braziliancrops,VanillaExpanded.VCookEStews">KIT_BeanStewGourmet</li>
+        </processes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

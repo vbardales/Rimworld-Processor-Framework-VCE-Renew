@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>nelim.pf.vce</packageId>
+  <name>[SYR] Processor Framework - Vanilla Expanded Cooking Renew</name>
+  <author>Daemon976 - 1.6 port by nelim</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <url>https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew</url>
+  <description>Runs Vanilla Cooking Expanded's cheese press, electric pot, stew pot and soy fermenter on [SYR] Processor Framework instead of the processor they ship with.
+
+Nothing about the food changes. The same milk makes the same cheese, the same uncooked soup makes the same soup, at the same rate. What changes is the interface in front of it: the framework's product-and-ingredient tab, its per-ingredient allow list, its fill and empty work givers, and the product drawn on the building.
+
+Supports the Stews and Sushi add-ons, and Kit's Brazilian Crops, when they are installed.
+
+REQUIRES [SYR] Processor Framework and Vanilla Cooking Expanded.
+
+Use the framework's maintained version, which supports 1.6:
+https://steamcommunity.com/workshop/filedetails/?id=3210544395
+
+A 1.6 revival of a mod that stopped at 1.4. The processes are Daemon976's, kept at their original values and under their original defNames. The patch layer is not: Vanilla Cooking Expanded moved its four buildings off ItemProcessor and onto the Vanilla Expanded Framework's pipe-system processor in the 1.6 cycle, so every patch in the original mod now aims at a comp that is no longer there. All five patch files were rewritten against the buildings as they stand in 1.6.
+
+The 1.6 cheese press also merged its thirteen modded cheeses into one cheese labelled by what went into it, so the thirteen separate processes became one process with thirteen ingredients.
+
+CREDIT
+
+The mod, its processes and their balance are Daemon976's work.
+
+No licence was declared anywhere - not in the files, not in the About, not on the Steam page - and the mod has not been updated since the 1.4 cycle. It is republished here under the usual convention for abandoned mods: full credit, and removal on request. If Daemon976 would rather this port did not exist, say so and it comes down.
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2887181698</description>
+  <modDependencies>
+    <li>
+      <packageId>syrchalis.processor.framework</packageId>
+      <displayName>[SYR] Processor Framework</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3210544395</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>VanillaExpanded.VCookE</packageId>
+      <displayName>Vanilla Cooking Expanded</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2134308519</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>syrchalis.processor.framework</li>
+    <li>VanillaExpanded.VCookE</li>
+    <li>VanillaExpanded.VCookEStews</li>
+    <li>VanillaExpanded.VCookESushi</li>
+    <li>zal.braziliancrops</li>
+    <li>sarg.alphaanimals</li>
+    <li>sarg.rimbees</li>
+    <li>VanillaExpanded.VGeneticsE</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>Daemon976.PF.VFEC</li>
+  </incompatibleWith>
+</ModMetaData>

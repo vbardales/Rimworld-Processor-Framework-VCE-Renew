@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  One process where the original mod had fourteen.
+
+  Vanilla Cooking Expanded used to ship one cheese ThingDef per milk - VCE_GowCheese,
+  VCE_WeirdCheese, VCE_RatCheese and ten more - so the original mod needed one ProcessDef each to
+  name each product. In 1.6 all of them are gone: there is a single VCE_Cheese, and the milk it
+  came from is read back off the stack by VEF.Things.CompProperties_LabelByIngredients, which
+  renames it "gow cheese", "rat cheese" and so on. Naming any of the thirteen old defs here would
+  be an unresolved cross-reference and nothing more.
+
+  So the thirteen milks move from thirteen products to one ingredient filter. This is also the
+  shape the framework's own tab wants: it lists products, with their ingredients as sub-nodes the
+  player can allow one by one. Thirteen processes would have been thirteen identical "cheese"
+  rows.
+
+  Insect jelly is in the filter because VCE 1.6 makes cheese from it (VCE_JellyIntoCheese) and the
+  label override for it is already in VCE_Cheese itself. The original mod predates that.
+
+  The packageIds on the MayRequire lines, and the milk defNames, are taken from VCE's own 1.6
+  add-on folders rather than from the original mod - Vanilla Genetics Expanded is
+  VanillaExpanded.VGeneticsE now, and VCE gained AlphaBees support after the original mod stopped.
+  Vanilla Factions Expanded - Insectoids is not here: VCE 1.6 dropped its cheese, and the
+  packageId the original guarded on (oskarpotocki.vfe.insectoid) belongs to the superseded first
+  version of that mod.
+
+  capacityFactor, usesQuality and qualityDays are Daemon976's numbers, untouched.
+-->
+<Defs>
+
+  <ProcessorFramework.ProcessDef>
+    <defName>VCE_Cheese</defName>
+    <thingDef>VCE_Cheese</thingDef>
+    <ingredientFilter>
+      <thingDefs>
+        <li>Milk</li>
+        <li>InsectJelly</li>
+        <li MayRequire="sarg.alphaanimals">AA_GowMilk</li>
+        <li MayRequire="sarg.alphaanimals">AA_BlueMilk</li>
+        <li MayRequire="sarg.alphaanimals">AA_NightMilk</li>
+        <li MayRequire="sarg.rimbees">RB_BeeMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_WeirdMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_MechaMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_BearffaloMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_ThrumffaloMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_MuffalochickenMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_ChickenffaloMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_MuffalobearMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_WolffaloMilk</li>
+        <li MayRequire="VanillaExpanded.VGeneticsE">GR_RatMilk</li>
+      </thingDefs>
+    </ingredientFilter>
+    <capacityFactor>2.5</capacityFactor>
+    <usesQuality>true</usesQuality>
+    <qualityDays>(1, 3, 6, 12, 24, 48, 60)</qualityDays>
+  </ProcessorFramework.ProcessDef>
+
+</Defs>

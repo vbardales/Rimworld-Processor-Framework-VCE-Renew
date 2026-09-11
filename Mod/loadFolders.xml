@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  The add-on support is gated here rather than by MayRequire on every def, and rather than by
+  PatchOperationFindMod, which the original mod used in three of its five patch files.
+  PatchOperationFindMod compares a mod's *display name*, not its packageId, so it silently stops
+  matching the day an author renames the workshop item - and the Sushi add-on is exactly the kind
+  of mod that gets renamed. IfModActive compares packageIds, which do not change.
+
+  It also settles the Sushi add-on's two 1.6 folders (1.6Odyssey and 1.6NotOdyssey) for free:
+  patches run against the finished document, after Sushi's own loadFolders has picked one of
+  them, so a single patch serves both cases and never has to know which one loaded.
+
+  Kit's Brazilian Crops needs the Stews add-on as well as Brazilian Crops itself: the recipes it
+  hangs off are gated on VCE_StewCooking, a research project that lives in Stews, and the uncooked
+  stew textures live there too. The original mod guarded on Brazilian Crops alone, which left an
+  unresolved research reference for anyone running Brazilian Crops without Stews.
+-->
+<loadFolders>
+	<v1.6>
+		<li>/</li>
+		<li IfModActive="VanillaExpanded.VCookEStews">Mods/Stews</li>
+		<li IfModActive="VanillaExpanded.VCookESushi">Mods/Sushi</li>
+		<li IfModActiveAll="zal.braziliancrops,VanillaExpanded.VCookEStews">Mods/BrazilianCrops</li>
+	</v1.6>
+</loadFolders>

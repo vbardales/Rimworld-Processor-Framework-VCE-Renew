@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  VCE_CheesePress, in VCE 1.6/Defs/ThingDefs_Buildings/Buildings.xml.
+
+  What the original mod patched here no longer exists. In 1.4 the press declared
+  <thingClass>ItemProcessor.Building_ItemProcessor</thingClass> and an
+  ItemProcessor.CompProperties_ItemProcessor; ItemProcessor was removed from the Vanilla Expanded
+  Framework in the 1.6 cycle, and VCE moved the press onto PipeSystem instead. In 1.6 it declares
+  no thingClass at all - it is a plain ParentName="BuildingBase" - so the original's
+  PatchOperationRemove on /thingClass now misses, and so does its replacement of the ItemProcessor
+  comp. The whole original mod is inert in 1.6, not harmful.
+
+  Two things have to go, not one:
+
+  - the comp, replaced below;
+  - the inspector tab. PipeSystem.ITab_Processor overrides FillTab and nothing else, so it does
+    not hide itself when its comp is absent: it inherits ITab's IsVisible, stays on the building,
+    and reaches for a CompAdvancedResourceProcessor that is no longer there the moment the player
+    clicks it. The framework adds its own tabs by Harmony patch and wants none declared here -
+    its own BarrelProcessor has no <inspectorTabs> either - so the node is removed outright rather
+    than emptied.
+
+  VCE's own add-on patches (Alpha Animals, AlphaBees, Vanilla Genetics Expanded) add their milks
+  to the PipeSystem comp's <processes>. They run before this file, because VCE loads first, so
+  they still find their target and log nothing; this replacement then discards the comp they wrote
+  into. Their milks are picked back up in the ingredient filter of Defs/ProcessDefs_Cheese.xml.
+
+  VCE's PipeSystem process defs (VCE_MilkIntoCheese, VCE_JellyIntoCheese and the add-ons') are
+  left in place. A PipeSystem.ProcessDef is only ever read through a
+  CompAdvancedResourceProcessor, so once no building lists them they do nothing at all; and
+  removing defs that belong to another mod would break any third mod that names them. Nothing here
+  registers in a pipe net either - CompAdvancedResourceProcessor derives straight from ThingComp,
+  not from CompResource, and none of these four buildings carries a resource comp - so dropping it
+  leaves no net membership behind.
+-->
+<Patch>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="VCE_CheesePress"]/inspectorTabs</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VCE_CheesePress"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]</xpath>
+    <value>
+      <li Class="ProcessorFramework.CompProperties_Processor">
+        <capacity>5</capacity>
+        <independentProcesses>true</independentProcesses>
+        <processes>
+          <li>VCE_Cheese</li>
+        </processes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

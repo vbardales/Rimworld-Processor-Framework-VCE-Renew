@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Daemon976's three bean-stew processes, unchanged in every value. Only their delivery changed:
+  he added them by PatchOperationAdd on /Defs from inside a PatchOperationFindMod that matched on
+  the display name "Kit's Brazilian Crops (Continued)". They are plain defs in a packageId-gated
+  folder now.
+-->
+<Defs>
+
+  <ProcessorFramework.ProcessDef>
+    <defName>KIT_BeanStewFine</defName>
+    <thingDef>KIT_BeanStewFine</thingDef>
+    <ingredientFilter>
+      <thingDefs>
+        <li>KIT_UncookedStewFine</li>
+      </thingDefs>
+    </ingredientFilter>
+    <capacityFactor>1</capacityFactor>
+    <efficiency>10.0</efficiency>
+    <processDays>.5</processDays>
+  </ProcessorFramework.ProcessDef>
+
+  <ProcessorFramework.ProcessDef>
+    <defName>KIT_BeanStewLavish</defName>
+    <thingDef>KIT_BeanStewLavish</thingDef>
+    <ingredientFilter>
+      <thingDefs>
+        <li>KIT_UncookedStewLavish</li>
+      </thingDefs>
+    </ingredientFilter>
+    <capacityFactor>1</capacityFactor>
+    <efficiency>10.0</efficiency>
+    <processDays>.7</processDays>
+  </ProcessorFramework.ProcessDef>
+
+  <ProcessorFramework.ProcessDef>
+    <defName>KIT_BeanStewGourmet</defName>
+    <thingDef>KIT_BeanStewGourmet</thingDef>
+    <ingredientFilter>
+      <thingDefs>
+        <li>KIT_UncookedStewGourmet</li>
+      </thingDefs>
+    </ingredientFilter>
+    <capacityFactor>1</capacityFactor>
+    <efficiency>10.0</efficiency>
+    <processDays>1</processDays>
+  </ProcessorFramework.ProcessDef>
+
+</Defs>

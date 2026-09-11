@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  The one process in this mod whose numbers had to change, and not because of the framework.
+
+  Daemon976 wrote it with usesQuality and a seven-step qualityDays, because in the 1.4 Sushi
+  add-on VCE_SoySauce carried a CompQuality and a CompProperties_StackByQuality. In 1.6 both are
+  gone from the def: soy sauce is a plain condiment with no quality at all. Asking the framework
+  to set a quality on a thing that has no CompQuality is asking for a null reference at the moment
+  the batch finishes.
+
+  So quality is out and the process is a flat wait instead. Ten days is the Sushi add-on's own
+  1.6 figure - its VCE_SoybeansToSauce runs 600,000 ticks - rather than the one to sixty days the
+  quality ladder used to span. capacityFactor is Daemon976's, untouched.
+
+  The original mod added this def by PatchOperationAdd on /Defs from inside a
+  PatchOperationFindMod. It is a plain def in a folder gated by packageId now.
+-->
+<Defs>
+
+  <ProcessorFramework.ProcessDef>
+    <defName>PF_VCE_SoySauce</defName>
+    <thingDef>VCE_SoySauce</thingDef>
+    <ingredientFilter>
+      <thingDefs>
+        <li>VCE_RawSoybean</li>
+      </thingDefs>
+    </ingredientFilter>
+    <capacityFactor>2.5</capacityFactor>
+    <processDays>10</processDays>
+  </ProcessorFramework.ProcessDef>
+
+</Defs>

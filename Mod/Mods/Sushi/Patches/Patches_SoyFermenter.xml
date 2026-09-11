@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  VCE_SoyFermenter, in the Sushi add-on's 1.6Odyssey/ and 1.6NotOdyssey/ folders.
+
+  The add-on ships two 1.6 folders and picks one in its own loadFolders, on whether the Odyssey
+  DLC is active. Patches run against the finished document, after that choice has been made, so
+  one patch covers both - and the two copies of the def are byte-identical in the part this
+  touches anyway. Nothing here needs to know which folder loaded, which is the point: guarding on
+  a folder name would break the day the add-on renames one.
+-->
+<Patch>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="VCE_SoyFermenter"]/inspectorTabs</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VCE_SoyFermenter"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]</xpath>
+    <value>
+      <li Class="ProcessorFramework.CompProperties_Processor">
+        <capacity>10</capacity>
+        <independentProcesses>true</independentProcesses>
+        <processes>
+          <li>PF_VCE_SoySauce</li>
+        </processes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

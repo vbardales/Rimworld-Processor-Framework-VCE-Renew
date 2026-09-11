@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  VCE_StewPot, in the Stews add-on's 1.6/Defs/ThingDefs_Buildings/Buildings.xml.
+
+  Same conversion as the other three. The pot keeps its refuelable, heat-pusher and glower comps;
+  only the PipeSystem <li> is replaced.
+
+  Losing the PipeSystem comp also loses inProgressTexture and finishedTexture - the pot no longer
+  swaps to VCE_StewPotFull while it is cooking. The framework's equivalent is
+  filledGraphicSuffix on the ProcessDef, which appends a suffix to the building's own texture path
+  and so cannot reach a differently named texture in another mod's folder. Left as the original
+  had it: the framework draws the product icon over the building instead.
+
+  The pot cooks soups as well as stews, and the electric pot cooks stews as well as soups. That
+  cross-listing is Daemon976's, kept.
+-->
+<Patch>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName="VCE_StewPot"]/inspectorTabs</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="VCE_StewPot"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]</xpath>
+    <value>
+      <li Class="ProcessorFramework.CompProperties_Processor">
+        <capacity>10</capacity>
+        <independentProcesses>true</independentProcesses>
+        <processes>
+          <li>VCE_CookedStewSimple</li>
+          <li>VCE_CookedStewFine</li>
+          <li>VCE_CookedStewLavish</li>
+          <li>VCE_CookedSoupSimple</li>
+          <li>VCE_CookedSoupFine</li>
+          <li>VCE_CookedSoupLavish</li>
+          <li>VCE_CookedSoupGourmet</li>
+          <li MayRequire="zal.braziliancrops">KIT_BeanStewFine</li>
+          <li MayRequire="zal.braziliancrops">KIT_BeanStewLavish</li>
+          <li MayRequire="zal.braziliancrops">KIT_BeanStewGourmet</li>
+        </processes>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

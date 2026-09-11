@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Send Kit's Brazilian Crops' stove recipes to the uncooked stew instead of the finished meal.
+
+  This is the one place where the rewrite does not follow the original's method, and it is worth
+  saying why.
+
+  Daemon976 redefined the recipes: his Defs/Recipes_BeanStew.xml declared its own
+  KIT_CookBeanStewFine, KIT_CookBeanStewLavish and KIT_CookBeanStewGourmet under the same defNames
+  as Brazilian Crops', so that loading later overwrote them. That worked against Brazilian Crops
+  as it stood in 2022. It does not work against it as it stands now:
+
+  - Brazilian Crops rebuilt its recipes for 1.6. Ingredient counts went from 5 and 10 whole items
+    to nutrition-based 0.5 and 1; the research prerequisite was dropped; and they now hang off its
+    own abstract parents, KIT_CookComplexBeanStewMealBase and KIT_CookGourmetBeanStewMealBase,
+    which did not exist. Copying the old overrides forward would silently revert every one of
+    those changes.
+  - It also grew two bulk recipes, KIT_CookBeanStewFineBulk and KIT_CookBeanStewLavishBulk, which
+    the original mod never knew about. Leaving them alone would leave a stove that still turns out
+    finished bean stew four at a time, straight past the pot the mod exists to route it through.
+
+  Patching only <products> keeps every one of Brazilian Crops' own 1.6 decisions - ingredients,
+  work, skill, filters, parents - and changes the single thing this mod has an opinion about. The
+  bulk recipes make four uncooked stews, as they made four cooked ones.
+-->
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewFine"]/products</xpath>
+    <value>
+      <products>
+        <KIT_UncookedStewFine>1</KIT_UncookedStewFine>
+      </products>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewLavish"]/products</xpath>
+    <value>
+      <products>
+        <KIT_UncookedStewLavish>1</KIT_UncookedStewLavish>
+      </products>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewGourmet"]/products</xpath>
+    <value>
+      <products>
+        <KIT_UncookedStewGourmet>1</KIT_UncookedStewGourmet>
+      </products>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewFineBulk"]/products</xpath>
+    <value>
+      <products>
+        <KIT_UncookedStewFine>4</KIT_UncookedStewFine>
+      </products>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewLavishBulk"]/products</xpath>
+    <value>
+      <products>
+        <KIT_UncookedStewLavish>4</KIT_UncookedStewLavish>
+      </products>
+    </value>
+  </Operation>
+
+  <!--
+    The recipe labels still say "cook", and the stove still shows them; only what comes out has
+    changed. Renaming them would be a second opinion this mod has no business having, but the
+    description has to say the dish is not finished yet, or the player has no way to know the pot
+    is the next step. Same wording Brazilian Crops itself uses, one clause longer.
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RecipeDef[defName="KIT_CookBeanStewFine" or defName="KIT_CookBeanStewLavish" or defName="KIT_CookBeanStewGourmet" or defName="KIT_CookBeanStewFineBulk" or defName="KIT_CookBeanStewLavishBulk"]/description</xpath>
+    <value>\n\nThis stew comes out uncooked, and has to be finished in an electric pot or a stew pot.</value>
+  </Operation>
+
+</Patch>
