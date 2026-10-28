@@ -20,6 +20,8 @@ tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
+  - "2026-10-28: feature: a Pickle step that fills a processing building and reads its product (T11 to T16 of TEST_SCENARIOS.md); none known, to ask of the PickleTools session"
+  - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
 protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 updated: 2026-10-28
@@ -63,3 +65,11 @@ Result: `not_applicable`.
 - **Agreement and address (6.d):** no pawn text; masculine nouns (`ragoût`), impersonal `Il faut le cuire`, no tu or vous.
 - **`FRENCH_REVIEW.md` (6.f):** generated.
 - **Owner's review (6.g):** Virginie, 2026-10-28, revision `8027948` (the French as adjusted after two ChatGPT reviews: word order and infinitive applied, "non cuit" and "gastronomique" declined). No further correction requested. `translation_fr` is `complete`.
+
+## Tests (writeTests, 2026-10-28, revision 1f009fc plus the files of this commit)
+
+- **7.a Scenarios:** `TEST_SCENARIOS.md`, 21 scenarios (T1 to T21), each with its proof. Figures read from the Defs.
+- **7.b Automated tests:** not applicable, justified: the mod ships no assembly and has no `Source/`, so there is no logic to unit test. No local script.
+- **7.c XML tests:** the shared checks, replayed now, green: `Check-ModBasics.ps1` (14 XML files, 15 defs), `Check-Translations.ps1` (6 source texts), `Check-DefInjected.ps1` (43 patch operations applied, 6 keys, 0 error). None asserts a figure one by one; none is written (see `TEST_SCENARIOS.md`, legend).
+- **7.d Pickle suite:** written, not run: `Tests/Pickle/` (companion `nelim.pf.vce.pickletests`, `wsl-ids.map`, `wsl-deps.sans-facultatifs.map`, `01-buildings.feature`, 2 scenarios). `Check-Steps.ps1`: every step line resolves to exactly one expression. It covers T5 and T17 only. T11 to T16 (the buildings make their product) need a Pickle step that fills a building and reads its output: none known. The optional passes (Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics) are not set up: Workshop ids unknown.
+- **7.e Non-applicability:** see 7.b; no artificial test added.

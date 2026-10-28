@@ -40,3 +40,8 @@ desktop.ini
 
 # Preview render intermediates.
 Art/.render/
+
+# Pickle evidence: disk only.
+Tests/Pickle/Evidence/
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/

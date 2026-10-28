@@ -1,0 +1,8 @@
+# Workshop ids of the mod's HARD dependencies that the staging script's built-in table does not know.
+# Read in every pass, the bare one included; it resolves and activates nothing.
+#
+# Both ids come from Mod/About/About.xml (steamWorkshopUrl). The ids of the optional add-ons (Stews, Sushi,
+# Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics Expanded) are not known here yet: the passes that
+# need them are not set up (Tests/Pickle/README.md).
+syrchalis.processor.framework   3210544395
+VanillaExpanded.VCookE          2134308519
