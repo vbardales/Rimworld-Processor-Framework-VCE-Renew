@@ -74,3 +74,7 @@ Result: `not_applicable`.
 - **7.e Non-applicability:** see 7.b; no artificial test added.
 - **7.f Version delivered:** the offline checks and the Pickle suite were written against revision `3ced69e`; any commit touching `Mod/` reopens 7.c and 7.d.
 - **7.i:** moved to `playTests[1.0.0]` on 2026-10-28. T13 to T16 stay `unverified` until the optional passes exist.
+
+## Pickle tickets (playTests)
+
+- `20261028-120049-743-7607` filed 2026-10-28: initial minimal pass, 4 scenarios (`01-buildings`, `02-production`), English, `-DepMap wsl-deps.sans-facultatifs.map`, revision `3e99185`, evidence in `Tests/Pickle/Inbox/initial-minimal`. Owner of the ticket: this session. At `RUN_DONE`: read `summary.json` then `junit.xml`, triage (T11 quality Normal at 6 days is an assumption), sort the Inbox (`docs/TEST-EVIDENCE.md`), update this file. Keep `Mod/` and `Tests/` unchanged until then.
