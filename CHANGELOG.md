@@ -2,6 +2,13 @@
 
 All notable changes to this mod are documented here.
 
+## [Unreleased]
+
+### Changed
+
+- About description no longer names a RimWorld version.
+- New Preview illustration and ModIcon source.
+
 ## [1.0.0] — 2026-09-05
 
 First release. Revival of Daemon976's **[SYR] Processor Framework - Vanilla Expanded Cooking** for
