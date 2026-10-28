@@ -37,3 +37,6 @@ PROMPT_*.md
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Preview render intermediates.
+Art/.render/

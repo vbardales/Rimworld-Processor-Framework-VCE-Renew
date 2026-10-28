@@ -2,7 +2,7 @@
 <ModMetaData>
   <packageId>nelim.pf.vce</packageId>
   <name>[SYR] Processor Framework - Vanilla Expanded Cooking Renew</name>
-  <author>Daemon976 - 1.6 port by nelim</author>
+  <author>Daemon976 - 1.6 adapted by Nelim</author>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -15,12 +15,12 @@ Supports the Stews and Sushi add-ons, and Kit's Brazilian Crops, when they are i
 
 REQUIRES [SYR] Processor Framework and Vanilla Cooking Expanded.
 
-Use the framework's maintained version, which supports 1.6:
+Use the framework's maintained version, which supports the latest RimWorld version:
 https://steamcommunity.com/workshop/filedetails/?id=3210544395
 
-A 1.6 revival of a mod that stopped at 1.4. The processes are Daemon976's, kept at their original values and under their original defNames. The patch layer is not: Vanilla Cooking Expanded moved its four buildings off ItemProcessor and onto the Vanilla Expanded Framework's pipe-system processor in the 1.6 cycle, so every patch in the original mod now aims at a comp that is no longer there. All five patch files were rewritten against the buildings as they stand in 1.6.
+A revival for the latest RimWorld version of a mod that stopped at 1.4. The processes are Daemon976's, kept at their original values and under their original defNames. The patch layer is not: Vanilla Cooking Expanded moved its four buildings off ItemProcessor and onto the Vanilla Expanded Framework's pipe-system processor in a later release, so every patch in the original mod now aims at a comp that is no longer there. All five patch files were rewritten against the buildings as they stand now.
 
-The 1.6 cheese press also merged its thirteen modded cheeses into one cheese labelled by what went into it, so the thirteen separate processes became one process with thirteen ingredients.
+The current cheese press also merged its thirteen modded cheeses into one cheese labelled by what went into it, so the thirteen separate processes became one process with thirteen ingredients.
 
 CREDIT
 

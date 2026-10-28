@@ -1,0 +1,12 @@
+{
+  "panel": {
+    "title":"Processor Framework VCE Renew (unofficial)","titleSize":38,
+    "titleParts":[{"text":"Processor"},{"text":"Framework","breakBefore":true}],
+    "suffix":"VCE Renew","tag":"(unofficial)","tagInline":true,
+    "copyLines":["VCE processors on one framework.", "Cheese, stews, pots and soy."]
+  },
+  "backgroundFile":"Preview-source.png",
+  "echo":{"file":"echo.png","color":"var(--accent)","width":185,"height":170},
+  "icon":{"file":"ModIcon-source.png"},
+  "palette":{"veil":"#352B23","inkPrimary":"#F5EFE5","inkSecondary":"#E7C878","accent":"#D8892F","badgeInk":"#17120E"}
+}
