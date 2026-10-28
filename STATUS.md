@@ -5,7 +5,7 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: declareDependencies[1.0.0]
+workflow_stage: settings[1.0.0]
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
@@ -30,3 +30,15 @@ Current state only: the front matter above is the source of truth, run lines go 
 makeSources: 2.a to 2.f done. ModIcon.png (128 px, 26 KB) and Art/ModIcon.ico regenerated from the new source. New `Art/Preview-source.png` (2026-10-28, from the owner's prompt, replaces a 0.272-value source): Measure-Palette.sh value 0.413, 3 families, vivid 25.2%; PROMPT file deleted. The Preview itself is not re-rendered yet (`mountPreview`). Target version 1.0.0: only 0.1.0 was released (owner, 2026-10-28), so the first 1.0.0 is still ahead; the CHANGELOG entry dated 2026-09-05 is renamed 0.1.0.
 
 State at 2026-10-28: the repository was rebuilt from the 2026-09-12 sweep format. `Mod/About/PublishedFileId.txt` holds `3811323202`, so the Workshop item exists. The local folder had no `.git` of its own; it now tracks `origin/main` (one commit, `9e50c62`).
+
+## Dependencies (2026-10-28, revision 96427e6)
+
+Read from the sources: `Mod/About/About.xml`, `Mod/loadFolders.xml`, every `Patches_*.xml` and `ProcessDefs_*.xml`.
+
+- **Hard (`modDependencies`):** `syrchalis.processor.framework` (Workshop 3210544395, the `ProcessorFramework.CompProperties_Processor` class every patch writes) and `VanillaExpanded.VCookE` (Workshop 2134308519, the four buildings patched). `PipeSystem` (Vanilla Expanded Framework) appears only as the xpath of the comp being replaced; VCE requires the framework itself, so it is not declared here.
+- **Optional, gated in `loadFolders.xml` by `IfModActive`:** `VanillaExpanded.VCookEStews` (Mods/Stews), `VanillaExpanded.VCookESushi` (Mods/Sushi), `zal.braziliancrops` with Stews (Mods/BrazilianCrops, `IfModActiveAll`).
+- **Optional, gated by `MayRequire` on the ingredient `<li>`:** `sarg.alphaanimals`, `sarg.rimbees`, `VanillaExpanded.VGeneticsE` (their milks in the cheese filter); `Patches_ElectricPot.xml` lists the stew processes with `MayRequire` on Stews, and on Brazilian Crops plus Stews for the bean stews. No `MayRequire` on an `<Operation>`, no `PatchOperationFindMod`.
+- **`loadAfter`:** every id above, plus nothing that depends on this mod, so no cycle. `incompatibleWith`: `Daemon976.PF.VFEC` (the original mod).
+- **DLC:** none required. `supportedVersions` and `loadFolders` both 1.6 only.
+- **Animal integrations (ANIMALS.md):** not applicable, the mod adds no animal.
+- **Not run:** `scripts/sort-load-order.py` needs a staged `Mods` folder with the dependencies; the order was checked by hand above. A Pickle staging at `playTests` runs it for real.
