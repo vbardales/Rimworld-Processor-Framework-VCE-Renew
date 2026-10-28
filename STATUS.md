@@ -5,7 +5,7 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
@@ -22,7 +22,7 @@ remaining:
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 9bc08be76f97e91c6bd28f8a2019ebf749183381
+protocols_read_sha: 50b962b4810e46131410b35ef0908c99768d1bee
 updated: 2026-10-28
 ---
 
@@ -72,3 +72,5 @@ Result: `not_applicable`.
 - **7.c XML tests:** the shared checks, replayed now, green: `Check-ModBasics.ps1` (14 XML files, 15 defs), `Check-Translations.ps1` (6 source texts), `Check-DefInjected.ps1` (43 patch operations applied, 6 keys, 0 error). None asserts a figure one by one; none is written (see `TEST_SCENARIOS.md`, legend).
 - **7.d Pickle suite:** written, not run: `Tests/Pickle/` (companion `nelim.pf.vce.pickletests`, `wsl-ids.map`, `wsl-deps.sans-facultatifs.map`, `01-buildings.feature` 2 scenarios, `02-production.feature` 2 scenarios). `Check-Steps.ps1`: every step line resolves to exactly one expression. T5, T17, T11, T12 covered. The production steps are NPT's (`PickleTools/ColonistRace/Source/ProcessorSteps.cs`, 2026-10-28, compiled and not played, not pushed then). T13 to T16 need the add-on passes. The optional passes are not set up: Workshop ids unknown.
 - **7.e Non-applicability:** see 7.b; no artificial test added.
+- **7.f Version delivered:** the offline checks and the Pickle suite were written against revision `3ced69e`; any commit touching `Mod/` reopens 7.c and 7.d.
+- **7.i:** moved to `playTests[1.0.0]` on 2026-10-28. T13 to T16 stay `unverified` until the optional passes exist.
