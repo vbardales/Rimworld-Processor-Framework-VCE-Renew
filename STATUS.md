@@ -5,14 +5,14 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: localize[1.0.0]
+workflow_stage: writeTests[1.0.0]
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
 settings_audit: not_applicable
-localization: unchecked
-translation_en: unchecked
-translation_fr: unchecked
+localization: complete
+translation_en: complete
+translation_fr: partial
 dependencies: declared
 workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3811323202
 published: yes
@@ -20,6 +20,8 @@ tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
+  - "2026-10-28: unverified: owner's French review of FRENCH_REVIEW.md (6.g), required before leaving writeTests; the French of the 3 uncooked bean stews is a session draft"
+  - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) not checked against Vanilla Cooking Expanded's French"
 protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 updated: 2026-10-28
 ---
@@ -53,3 +55,12 @@ Result: `not_applicable`.
 - **Configurable behaviour:** the process values (rates, ingredient counts, products) are Daemon976's, kept at their original values on purpose (see `CHANGELOG.md`). No player need for a knob: nothing to balance that the framework does not already expose. The framework's own settings page belongs to [SYR] Processor Framework, not to this mod.
 - **Decision:** no settings. No empty page and no shortcut can exist from these files.
 - **Not verified in game:** that Mod options lists no entry for this mod and that no MainButton appears. Pickle at `playTests`; listed in `remaining`.
+
+## Translation audit (2026-10-28)
+
+- **Inventory (6.a):** the only player-facing texts of the mod are the label and description of the 3 uncooked bean stews (`Mods/BrazilianCrops/Defs/Items_UncookedBeanStew.xml`). The 12 `ProcessorFramework.ProcessDef` carry no text field; the patches replace comps and add no text; no code, so no `Keyed`. About metadata is outside the in-game gate.
+- **English (6.b, 6.c):** the Def's own values are the English coverage.
+- **French (6.c):** `Mods/BrazilianCrops/Languages/French/DefInjected/ThingDef/Items_UncookedBeanStew.xml`, in the gated folder so it loads only with Brazilian Crops and Stews. `Check-Translations.ps1`: PASS, 6 source texts. `Check-DefInjected.ps1`: 6 keys, 0 errors.
+- **Agreement and address (6.d):** no pawn text; masculine nouns (`ragoût`), impersonal `Il faut le cuire`, no tu or vous.
+- **`FRENCH_REVIEW.md` (6.f):** generated.
+- **Owner's review (6.g):** pending, no reviewer yet. `translation_fr` stays `partial`.

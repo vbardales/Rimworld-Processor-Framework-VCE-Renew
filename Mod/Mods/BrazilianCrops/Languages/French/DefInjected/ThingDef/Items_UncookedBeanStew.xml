@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<KIT_UncookedStewFine.label>ragoût de haricots fin cru</KIT_UncookedStewFine.label>
+	<KIT_UncookedStewFine.description>Un ragoût de haricots fin, encore cru. Il faut le cuire dans une marmite électrique ou une marmite à ragoût pour qu'il soit comestible.</KIT_UncookedStewFine.description>
+
+	<KIT_UncookedStewLavish.label>ragoût de haricots somptueux cru</KIT_UncookedStewLavish.label>
+	<KIT_UncookedStewLavish.description>Un ragoût de haricots somptueux, encore cru. Il faut le cuire dans une marmite électrique ou une marmite à ragoût pour qu'il soit comestible.</KIT_UncookedStewLavish.description>
+
+	<KIT_UncookedStewGourmet.label>ragoût de haricots gourmet cru</KIT_UncookedStewGourmet.label>
+	<KIT_UncookedStewGourmet.description>Un ragoût de haricots gourmet, encore cru. Il faut le cuire dans une marmite électrique ou une marmite à ragoût pour qu'il soit comestible.</KIT_UncookedStewGourmet.description>
+
+</LanguageData>
