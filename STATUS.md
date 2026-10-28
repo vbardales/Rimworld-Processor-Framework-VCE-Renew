@@ -5,11 +5,11 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: settings[1.0.0]
+workflow_stage: localize[1.0.0]
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
-settings_audit: unchecked
+settings_audit: not_applicable
 localization: unchecked
 translation_en: unchecked
 translation_fr: unchecked
@@ -19,6 +19,7 @@ published: yes
 tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
+  - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
 protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 updated: 2026-10-28
 ---
@@ -42,3 +43,13 @@ Read from the sources: `Mod/About/About.xml`, `Mod/loadFolders.xml`, every `Patc
 - **DLC:** none required. `supportedVersions` and `loadFolders` both 1.6 only.
 - **Animal integrations (ANIMALS.md):** not applicable, the mod adds no animal.
 - **Not run:** `scripts/sort-load-order.py` needs a staged `Mods` folder with the dependencies; the order was checked by hand above. A Pickle staging at `playTests` runs it for real.
+
+## Settings audit (2026-10-28, revision dec6284)
+
+Result: `not_applicable`.
+
+- **Files read:** all of `Mod/` (`git ls-files`): 1 `loadFolders.xml`, 5 `ProcessorFramework.ProcessDef` files (12 defs), 1 file of 3 `ThingDef` (uncooked bean stews), 7 patch files (`PatchOperationAdd`, `Remove`, `Replace` only), `About.xml`. No `.dll`, no `.cs`, no `Source/`.
+- **Inventory:** no existing setting; no `Verse.Mod` subclass is possible without an assembly; no `MainButtonDef`, so no shortcut either. No inherited setting in the files kept from the original.
+- **Configurable behaviour:** the process values (rates, ingredient counts, products) are Daemon976's, kept at their original values on purpose (see `CHANGELOG.md`). No player need for a knob: nothing to balance that the framework does not already expose. The framework's own settings page belongs to [SYR] Processor Framework, not to this mod.
+- **Decision:** no settings. No empty page and no shortcut can exist from these files.
+- **Not verified in game:** that Mod options lists no entry for this mod and that no MainButton appears. Pickle at `playTests`; listed in `remaining`.
