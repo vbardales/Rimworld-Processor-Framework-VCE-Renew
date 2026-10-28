@@ -20,7 +20,6 @@ tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
-  - "2026-10-28: feature: a Pickle step that fills a processing building and reads its product (T11 to T16 of TEST_SCENARIOS.md); none known; asked of the PickleTools session (NPT) on 2026-10-28, answer awaited"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
 protocols_read_sha: 9bc08be76f97e91c6bd28f8a2019ebf749183381
@@ -71,5 +70,5 @@ Result: `not_applicable`.
 - **7.a Scenarios:** `TEST_SCENARIOS.md`, 21 scenarios (T1 to T21), each with its proof. Figures read from the Defs.
 - **7.b Automated tests:** not applicable, justified: the mod ships no assembly and has no `Source/`, so there is no logic to unit test. No local script.
 - **7.c XML tests:** the shared checks, replayed now, green: `Check-ModBasics.ps1` (14 XML files, 15 defs), `Check-Translations.ps1` (6 source texts), `Check-DefInjected.ps1` (43 patch operations applied, 6 keys, 0 error). None asserts a figure one by one; none is written (see `TEST_SCENARIOS.md`, legend).
-- **7.d Pickle suite:** written, not run: `Tests/Pickle/` (companion `nelim.pf.vce.pickletests`, `wsl-ids.map`, `wsl-deps.sans-facultatifs.map`, `01-buildings.feature`, 2 scenarios). `Check-Steps.ps1`: every step line resolves to exactly one expression. It covers T5 and T17 only. T11 to T16 (the buildings make their product) need a Pickle step that fills a building and reads its output: none known. The optional passes (Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics) are not set up: Workshop ids unknown.
+- **7.d Pickle suite:** written, not run: `Tests/Pickle/` (companion `nelim.pf.vce.pickletests`, `wsl-ids.map`, `wsl-deps.sans-facultatifs.map`, `01-buildings.feature` 2 scenarios, `02-production.feature` 2 scenarios). `Check-Steps.ps1`: every step line resolves to exactly one expression. T5, T17, T11, T12 covered. The production steps are NPT's (`PickleTools/ColonistRace/Source/ProcessorSteps.cs`, 2026-10-28, compiled and not played, not pushed then). T13 to T16 need the add-on passes. The optional passes are not set up: Workshop ids unknown.
 - **7.e Non-applicability:** see 7.b; no artificial test added.
