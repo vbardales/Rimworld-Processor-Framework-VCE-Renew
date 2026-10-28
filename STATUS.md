@@ -5,7 +5,7 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: setupRepo
+workflow_stage: makeSources
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
@@ -19,7 +19,6 @@ published: yes
 tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
-  - "2026-10-28: unverified: 1.a duplicate check not replayed (Search-Workshop needs the owner's yes)"
 protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 updated: 2026-10-28
 ---
