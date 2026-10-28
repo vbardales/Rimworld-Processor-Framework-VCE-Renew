@@ -9,3 +9,6 @@
 *.txt   text
 
 *.png binary
+
+# Read by bash in the WSL staging: LF only.
+*.map text eol=lf

@@ -23,7 +23,7 @@ remaining:
   - "2026-10-28: feature: a Pickle step that fills a processing building and reads its product (T11 to T16 of TEST_SCENARIOS.md); none known, to ask of the PickleTools session"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
+protocols_read_sha: 9bc08be76f97e91c6bd28f8a2019ebf749183381
 updated: 2026-10-28
 ---
 
