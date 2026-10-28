@@ -20,7 +20,7 @@ tested_on: never
 remaining:
   - "2026-10-28: unverified: never seen running in game"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
-  - "2026-10-28: unverified: owner's French review of FRENCH_REVIEW.md (6.g), required before leaving writeTests; the French of the 3 uncooked bean stews is a session draft"
+  - "2026-10-28: unverified: owner's French review of FRENCH_REVIEW.md (6.g), required before leaving writeTests; the French of the 3 uncooked bean stews is a session draft, adjusted 2026-10-28 after the ChatGPT review (word order, infinitive; "gourmet" and "cru" kept)"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) not checked against Vanilla Cooking Expanded's French"
 protocols_read_sha: 43dd90d4b7873c500347fba1be01275a48d5795b
 updated: 2026-10-28
