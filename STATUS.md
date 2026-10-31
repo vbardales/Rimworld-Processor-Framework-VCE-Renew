@@ -22,7 +22,7 @@ remaining:
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 50b962b4810e46131410b35ef0908c99768d1bee
+protocols_read_sha: a72739d764daa7e295af8decb223ac7a1e086169
 updated: 2026-10-28
 ---
 
