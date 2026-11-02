@@ -2,3 +2,6 @@
 # staging script from Mod/About/About.xml; no add-on.
 nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
 nelim.pickletools.colonistrace   path:PickleTools/ColonistRace/Mod
+# Vanilla Expanded Framework: VCookE needs it, About.xml does not name it (the staging script does not follow
+# dependencies of dependencies). Without it the 2026-11-02 run failed on VEF.* types not found. Workshop 2023507013.
+OskarPotocki.VanillaFactionsExpanded.Core   2023507013
