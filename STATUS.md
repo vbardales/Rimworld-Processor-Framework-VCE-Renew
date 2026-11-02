@@ -22,7 +22,7 @@ remaining:
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: a72739d764daa7e295af8decb223ac7a1e086169
+protocols_read_sha: a6a234e83b81671d5f12b113e505fb1b7cd839b2
 updated: 2026-10-28
 ---
 
@@ -77,4 +77,4 @@ Result: `not_applicable`.
 
 ## Pickle tickets (playTests)
 
-- `20261028-120049-743-7607` filed 2026-10-28: initial minimal pass, 4 scenarios (`01-buildings`, `02-production`), English, `-DepMap wsl-deps.sans-facultatifs.map`, revision `3e99185`, evidence in `Tests/Pickle/Inbox/initial-minimal`. Owner of the ticket: this session. At `RUN_DONE`: read `summary.json` then `junit.xml`, triage (T11 quality Normal at 6 days is an assumption), sort the Inbox (`docs/TEST-EVIDENCE.md`), update this file. Keep `Mod/` and `Tests/` unchanged until then.
+- `20261028-120049-743-7607` filed 2026-10-28: initial minimal pass, 4 scenarios (`01-buildings`, `02-production`), English, `-DepMap wsl-deps.sans-facultatifs.map`, revision `3e99185`, evidence in `Tests/Pickle/Inbox/initial-minimal`. Result 2026-11-02: red, 0 of 4, all at "save test-colony is loaded" (175 s timeout); cause: Vanilla Expanded Framework not staged (the staging script does not follow dependencies of dependencies, NPT confirmed), not a mod bug. Fix: `OskarPotocki.VanillaFactionsExpanded.Core 2023507013` added to `wsl-deps.sans-facultatifs.map` (revision `4719800`). Re-run `20261102-193445-751-5ecb` filed, evidence in `Tests/Pickle/Inbox/initial-minimal-vef`; the red folder `Inbox/initial-minimal` is deleted once that run is read. Owner of the tickets: this session. At `RUN_DONE`: read `summary.json` then `junit.xml`, triage (T11 quality Normal at 6 days is an assumption), sort the Inbox (`docs/TEST-EVIDENCE.md`), update this file. Keep `Mod/` and `Tests/` unchanged until then.
