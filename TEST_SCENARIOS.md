@@ -37,7 +37,7 @@ How each one is proved:
 | T13 | Stew in the stew pot, soup in the stew pot, stew in the electric pot | Stews | Same result as T12 with the stew defs | Pickle (step needs an add-on pass) |
 | T14 | Soybeans become soy sauce in 10 days, no quality | Fermenter, Sushi | `VCE_SoySauce`, no `CompQuality` error in the log | Pickle (step needs an add-on pass) |
 | T15 | Brazilian Crops bean stew goes through the pot | Brazilian Crops, Stews | The stove recipes give `KIT_UncookedStew*`, the pot gives `KIT_BeanStew*` | Pickle (step needs an add-on pass) |
-| T16 | Alpha Animals, RimBees, Vanilla Genetics milks are accepted by the press | Each add-on | The milk is in the press filter | Offline for the Def; step to write for the press |
+| T16 | Alpha Animals, RimBees, Vanilla Genetics milks are accepted by the press | Each add-on | The milk is in the press filter | Pickle `05-milks.feature`, pass "laits": **green 3 of 3** (ticket ced6, 2026-11-10, press filter holds gow, bee and rat milk; Alpha Bees id 1558161673 resolved) |
 
 ## Add-ons load themselves, and only when present
 
@@ -56,6 +56,6 @@ How each one is proved:
 
 ## Known gaps, not defects
 
-- T13 to T16 need the Stews, Sushi, Brazilian Crops and animal add-ons staged: the steps exist, the optional passes are not set up (Workshop ids unknown). Until then they are **unverified**, never counted as passed. T11 and T12 are written, not played.
+- T16 proven (ticket ced6). T13, T14 wait for ticket 9416 (cuisine); T15 waits for a Brazilian Crops pass (needs Vanilla Brewing Expanded). Until proven they are **unverified**, never counted as passed.
 - The quality of the T11 cheese at 6 days assumes the framework maps the days of `qualityDays` to Awful, Poor, Normal, Good, Excellent, Masterwork, Legendary in order. Not read in the framework: the first run decides.
 - The stew pot no longer swaps to its full texture, and soup no longer spoils on a power cut: both are documented losses (`README.md`, "What was lost in the move"), not scenarios.
