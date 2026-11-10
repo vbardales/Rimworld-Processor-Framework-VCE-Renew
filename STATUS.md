@@ -16,7 +16,8 @@ translation_fr: complete
 dependencies: declared
 workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3811323202
 published: yes
-tested_on: 1.6 (2026-11-03, initial minimal pass 4 of 4 green)
+workshop_required_items: "n/a, not released yet (only 0.1.0 released; AUDIT 4.g, owner 2026-11-10: on verra en 1.0.0)"
+tested_on: 2026-11-03 pickle 4719800
 remaining:
   - "2026-11-10: unverified (replay stopped at section 1, not read): 4.b/4.e Mod/About/OptionalCompat.xml absent while loadFolders and MayRequire gate Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics; 4.g workshop_required_items missing (n/a, not released yet expected)"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
