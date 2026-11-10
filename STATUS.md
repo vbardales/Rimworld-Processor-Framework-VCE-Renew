@@ -23,7 +23,7 @@ remaining:
   - "2026-11-10: open (replay 8.m): code review absent, no code_review_sha (Opus sub-agent, once, after the add-on passes)"
   - "2026-11-10: unverified (replay 8.h, 8.i): MainButton absence (needs RIMMSQOL staged) and FR/EN interface (waits for the Brazilian Crops pass); empty Mod options page proven absent (ticket b29a green, 03-settings); Player.log clean in both green runs"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 41435581d5b373fc72b95b1c83080954381bd6a4
+protocols_read_sha: 43ec7b3b86bbcac34e2876f4ce387daa9d91f5fc
 updated: 2026-11-10
 ---
 
