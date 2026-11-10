@@ -23,7 +23,7 @@ remaining:
   - "2026-11-10: open (replay 8.m): code review absent, no code_review_sha (Opus sub-agent, once, after the add-on passes)"
   - "2026-11-10: unverified (replay 8.h, 8.i): no empty Mod options page and no MainButton in game; FR and EN interface and Player.log"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 7b546d8e440290ac5c858cce2035d1b6289bbc1f
+protocols_read_sha: 41435581d5b373fc72b95b1c83080954381bd6a4
 updated: 2026-11-10
 ---
 
