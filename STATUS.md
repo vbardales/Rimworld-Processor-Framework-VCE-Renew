@@ -5,7 +5,7 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: playTests[1.0.0]
+workflow_stage: setupRepo
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
@@ -18,10 +18,12 @@ workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3811323202
 published: yes
 tested_on: 1.6 (2026-11-03, initial minimal pass 4 of 4 green)
 remaining:
+  - "2026-11-10: open (replay 1.d): About.xml name lacks the (unofficial) suffix and the description does not start with the UNOFFICIAL paragraph (licence silent, public; PUBLISHING.md); fix in Mod/About/About.xml, then replay"
+  - "2026-11-10: unverified (replay stopped at section 1, not read): 4.b/4.e Mod/About/OptionalCompat.xml absent while loadFolders and MayRequire gate Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics; 4.g workshop_required_items missing (n/a, not released yet expected)"
   - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
   - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 43fa498f35afbdc790b3d884e04b1dfa9047fbd3
+protocols_read_sha: 8fe30d0c5fb828fe8a7766a558ded56d3cea7772
 updated: 2026-11-10
 ---
 
