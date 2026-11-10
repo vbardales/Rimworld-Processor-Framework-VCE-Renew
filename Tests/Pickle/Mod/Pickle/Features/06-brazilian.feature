@@ -1,6 +1,6 @@
-# T15 of TEST_SCENARIOS.md, in the optional pass "brazilian" (no dep map yet): Kit's Brazilian Crops staged next to
+# T15 of TEST_SCENARIOS.md, in the optional pass "brazilian" (wsl-deps.brazilian.map): Kit's Brazilian Crops staged next to
 # the Stews add-on and Vanilla Cooking Expanded. Kit's Brazilian Crops also needs Vanilla Brewing Expanded
-# (VBE_* defs, packageId and Workshop id not found yet): without it KIT_Guarana has a null thingClass and the save
+# (VanillaExpanded.VBrewE, 2186560858): without it KIT_Guarana has a null thingClass and the save
 # does not load (ReadingPolicyDatabase NRE, ticket 5b84). Same steps and limits as 04-cuisine.feature.
 @requires:nelim.pickletools.colonistrace
 Feature: the Brazilian Crops bean stews go through the pot

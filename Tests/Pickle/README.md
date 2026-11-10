@@ -12,7 +12,7 @@ Everything provable outside the game is proved outside it (`Check-ModBasics`, `C
 |---|---|---|---|---|
 | minimal | `wsl-deps.sans-facultatifs.map` | `01-buildings.feature`, `02-production.feature` | Pickle, PickleTools InspectTabs and ColonistRace (production steps), [SYR] Processor Framework, Vanilla Cooking Expanded, this mod | written |
 | optional: cuisine | `wsl-deps.cuisine.map` | `04-cuisine.feature` | minimal plus Stews, Sushi | filed |
-| optional: brazilian | none yet | `06-brazilian.feature` | minimal plus Stews, Brazilian Crops and Vanilla Brewing Expanded (its VBE_* defs; without it the save does not load) | blocked: VBE Workshop id unknown |
+| optional: brazilian | `wsl-deps.brazilian.map` | `06-brazilian.feature` | minimal plus Stews, Brazilian Crops and Vanilla Brewing Expanded (its VBE_* defs; without it the save does not load) | filed |
 | English and French | `-Language English`, `-Language French` | the minimal feature | replays the French of the three uncooked bean stews | needs Brazilian Crops and Stews, so waits for the brazilian pass |
 
 No restart sequence, no DLC-absent pass: the mod has no settings and no DLC guard.
