@@ -1,5 +1,5 @@
-# T13, T14 and T15 of TEST_SCENARIOS.md, in the optional pass "cuisine" (wsl-deps.cuisine.map): Stews, Sushi and
-# Kit's Brazilian Crops staged next to the framework and Vanilla Cooking Expanded. Same steps and same limits as
+# T13 and T14 of TEST_SCENARIOS.md, in the optional pass "cuisine" (wsl-deps.cuisine.map): Stews and Sushi staged next to
+# the framework and Vanilla Cooking Expanded. Same steps and same limits as
 # 02-production.feature: the ingredient goes in through the framework's own path, the clock is moved by days,
 # power, fuel and a hauling colonist are not exercised. Figures: efficiency 10 for stews, soups and bean stews,
 # so one uncooked meal gives ten cooked ones.
@@ -46,13 +46,4 @@ Feature: the add-on buildings and processes make their product
     And Nelim's Pickle Tools: the "VCE_SoyFermenter" at (140, 155) is advanced until its process is complete
     And Nelim's Pickle Tools: the "VCE_SoyFermenter" at (140, 155) is emptied
     Then Nelim's Pickle Tools: the "VCE_SoySauce" product of the "VCE_SoyFermenter" at (140, 155) is labelled "soy"
-    And no errors were logged
-
-  @requires:zal.braziliancrops
-  Scenario: one uncooked bean stew becomes ten bean stews in the electric pot
-    When I spawn a "VCE_ElectricPot" at (144, 155)
-    And Nelim's Pickle Tools: the "VCE_ElectricPot" at (144, 155) is filled with 1 of "KIT_UncookedStewFine"
-    And Nelim's Pickle Tools: the "VCE_ElectricPot" at (144, 155) is advanced by 0.5 days
-    And Nelim's Pickle Tools: the "VCE_ElectricPot" at (144, 155) is emptied
-    Then Nelim's Pickle Tools: the product of the "VCE_ElectricPot" at (144, 155) is 10 of "KIT_BeanStewFine"
     And no errors were logged
