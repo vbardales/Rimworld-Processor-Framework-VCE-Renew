@@ -1,0 +1,10 @@
+# Optional pass "cuisine": the minimal pass plus the three cooking add-ons gated in loadFolders.xml
+# (Stews, Sushi, Brazilian Crops, which needs Stews). They do not exclude each other, so one pass.
+# Workshop ids: Stews and Sushi from docs/inventory/mods-decisions.tsv (Audit, 2026-11-10); Brazilian Crops by
+# Search-Workshop (About.xml packageId, 2026-11-10).
+nelim.pickletools.inspecttabs   path:PickleTools/InspectTabs/Mod
+nelim.pickletools.colonistrace   path:PickleTools/ColonistRace/Mod
+OskarPotocki.VanillaFactionsExpanded.Core   2023507013
+VanillaExpanded.VCookEStews   2134312965
+VanillaExpanded.VCookESushi   2158539170
+zal.braziliancrops   2886512401
