@@ -7,6 +7,7 @@ All notable changes to this mod are documented here.
 ### Changed
 
 - About description no longer names a RimWorld version.
+- Name ends with "(unofficial)" and the description starts with the UNOFFICIAL paragraph (no licence from the original author).
 - New Preview illustration and ModIcon source.
 
 ## [0.1.0] — 2026-09-05
