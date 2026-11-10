@@ -17,11 +17,11 @@ dependencies: declared
 workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3811323202
 published: yes
 workshop_required_items: "n/a, not released yet (only 0.1.0 released; AUDIT 4.g, owner 2026-11-10: on verra en 1.0.0)"
-tested_on: 2026-11-03 pickle 4719800
+tested_on: 2026-11-10 pickle 96bd087 (03-settings); 2026-11-03 pickle 4719800 (01, 02)
 remaining:
   - "2026-11-10: open (replay 8.f, 8.g, 8.k): optional Pickle passes (Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics) not set up, T13 to T16 unplayed; Workshop ids of the add-ons unknown"
   - "2026-11-10: open (replay 8.m): code review absent, no code_review_sha (Opus sub-agent, once, after the add-on passes)"
-  - "2026-11-10: unverified (replay 8.h, 8.i): no empty Mod options page and no MainButton in game; FR and EN interface and Player.log"
+  - "2026-11-10: unverified (replay 8.h, 8.i): MainButton absence (needs RIMMSQOL staged) and FR/EN interface (waits for the Brazilian Crops pass); empty Mod options page proven absent (ticket b29a green, 03-settings); Player.log clean in both green runs"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
 protocols_read_sha: 41435581d5b373fc72b95b1c83080954381bd6a4
 updated: 2026-11-10
