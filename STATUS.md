@@ -5,7 +5,7 @@ repo: Rimworld-Processor-Framework-VCE-Renew
 remote: https://github.com/vbardales/Rimworld-Processor-Framework-VCE-Renew.git
 visibility: public
 detached: yes
-workflow_stage: setupRepo
+workflow_stage: playTests[1.0.0]
 licence: silent
 licence_at: "2026-10-28: no upstream licence anywhere (files, About, Steam page), source mod dead since 1.4; the LICENSE here covers the port only"
 upstream_mod_remotes: N/A      # no upstream git repository known; not searched (no corpus search without the owner's yes)
@@ -19,11 +19,11 @@ published: yes
 workshop_required_items: "n/a, not released yet (only 0.1.0 released; AUDIT 4.g, owner 2026-11-10: on verra en 1.0.0)"
 tested_on: 2026-11-03 pickle 4719800
 remaining:
-  - "2026-11-10: unverified (replay stopped at section 1, not read): 4.b/4.e Mod/About/OptionalCompat.xml absent while loadFolders and MayRequire gate Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics; 4.g workshop_required_items missing (n/a, not released yet expected)"
-  - "2026-10-28: unverified: in game, confirm no empty page under Mod options and no MainButton for this mod (settings_audit, playTests)"
-  - "2026-10-28: unverified: optional Pickle passes not set up, Workshop ids of the add-ons unknown"
+  - "2026-11-10: open (replay 8.f, 8.g, 8.k): optional Pickle passes (Stews, Sushi, Brazilian Crops, Alpha Animals, RimBees, Vanilla Genetics) not set up, T13 to T16 unplayed; Workshop ids of the add-ons unknown"
+  - "2026-11-10: open (replay 8.m): code review absent, no code_review_sha (Opus sub-agent, once, after the add-on passes)"
+  - "2026-11-10: unverified (replay 8.h, 8.i): no empty Mod options page and no MainButton in game; FR and EN interface and Player.log"
   - "2026-10-28: unverified: French names of the electric pot and stew pot (marmite électrique, marmite à ragoût) and raffiné not checked against Vanilla Cooking Expanded's French"
-protocols_read_sha: 8fe30d0c5fb828fe8a7766a558ded56d3cea7772
+protocols_read_sha: 7b546d8e440290ac5c858cce2035d1b6289bbc1f
 updated: 2026-11-10
 ---
 
